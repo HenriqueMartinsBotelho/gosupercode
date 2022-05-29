@@ -7,7 +7,11 @@ import Tab1 from "./components/Tab1";
 import Tab2 from "./components/Tab2";
 import Tab3 from "./components/Tab3";
 import Login from "./components/Login";
+import Users from "./components/Users";
+import NewUser from "./components/NewUser";
+import SingleUser from "./components/SingleUser";
 import ProtectedRoutes from "./components/ProtectedRoutes";
+import PublicRoute from "./components/PublicRoute";
 
 const MainRoutes = () => {
   return (
@@ -25,9 +29,17 @@ const MainRoutes = () => {
           </Route>
 
           <Route path="settings" element={<Settings />} />
+          <Route
+            path="users"
+            element={<Users extraItem="test extra item from router" />}
+          />
+          <Route path="users/:userId" element={<SingleUser />} />
+          <Route path="users/new" element={<NewUser />} />
         </Route>
       </Route>
-      <Route path="login" element={<Login />} />
+      <Route path="login" element={<PublicRoute />}>
+        <Route path="/login" element={<Login />} />
+      </Route>
     </Routes>
   );
 };

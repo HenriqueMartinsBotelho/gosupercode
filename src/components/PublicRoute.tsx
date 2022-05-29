@@ -9,9 +9,9 @@ const useAuth = () => {
   }
 };
 
-const ProtectedRoutes = (props) => {
+const PublicRoutes = (props) => {
   const auth = useAuth();
-  return auth ? <Outlet /> : <Navigate to="/login" />;
+  return auth ? <Navigate to="/dashboard" /> : <Outlet />;
 };
 
-export default ProtectedRoutes;
+export default PublicRoutes;
