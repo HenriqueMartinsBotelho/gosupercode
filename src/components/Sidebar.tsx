@@ -29,7 +29,7 @@ const Sidebar = () => {
                 location.pathname === "/dashboard" ? "sidebar_active" : ""
               }
             >
-              Dashboard
+              Submissions
             </Link>
             <Link
               to="/tabs"
@@ -39,14 +39,7 @@ const Sidebar = () => {
             >
               Tabs
             </Link>
-            <Link
-              to="/settings"
-              className={
-                location.pathname === "/settings" ? "sidebar_active" : ""
-              }
-            >
-              Settings
-            </Link>
+
             <Link
               to="/users"
               className={
@@ -54,6 +47,20 @@ const Sidebar = () => {
               }
             >
               Users
+            </Link>
+            <Link
+              to="/test"
+              className={location.pathname === "/test" ? "sidebar_active" : ""}
+            >
+              Test
+            </Link>
+            <Link
+              to="/settings"
+              className={
+                location.pathname === "/settings" ? "sidebar_active" : ""
+              }
+            >
+              Settings
             </Link>
             {location.pathname !== "/login" && (
               <button onClick={logout}>Logout</button>
